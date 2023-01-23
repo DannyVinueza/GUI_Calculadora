@@ -276,6 +276,17 @@ public class calculadora {
                 }
             }
         });
+        cButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                valor = salida.getText();
+                if(!valor.equals("0")){
+                    salidaResultado.setText("Resultado saldrá aqui");
+                }else{
+                    salidaResultado.setText("Resultado saldrá aqui");
+                }
+            }
+        });
     }
     public static void main(String[] args) {
         JFrame frame =new JFrame("calculadora");
