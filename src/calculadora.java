@@ -25,6 +25,7 @@ public class calculadora {
     private JButton button5;
     private JLabel salida;
     private JLabel salidaResultado;
+    private JButton button4;
 
     private String valor, x, y;
     private int num;

@@ -141,22 +141,6 @@
           <text value="4"/>
         </properties>
       </component>
-      <component id="52079" class="javax.swing.JButton" binding="cButton" default-binding="true">
-        <constraints>
-          <grid row="2" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="C"/>
-        </properties>
-      </component>
-      <component id="f1861" class="javax.swing.JButton" binding="button5" default-binding="true">
-        <constraints>
-          <grid row="2" column="2" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="←"/>
-        </properties>
-      </component>
       <component id="2568" class="javax.swing.JLabel" binding="salida">
         <constraints>
           <grid row="0" column="0" row-span="1" col-span="4" vsize-policy="0" hsize-policy="7" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
@@ -165,7 +149,7 @@
           <font name="Cambria Math" size="20"/>
           <foreground color="-16777216"/>
           <horizontalTextPosition value="4"/>
-          <text value="0"/>
+          <text value=""/>
         </properties>
       </component>
       <component id="a669f" class="javax.swing.JLabel" binding="salidaResultado">
@@ -177,6 +161,30 @@
           <foreground color="-16777216"/>
           <horizontalTextPosition value="4"/>
           <text value="Resultado saldrá aqui"/>
+        </properties>
+      </component>
+      <component id="f1861" class="javax.swing.JButton" binding="button5" default-binding="true">
+        <constraints>
+          <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="⌫"/>
+        </properties>
+      </component>
+      <component id="52079" class="javax.swing.JButton" binding="cButton" default-binding="true">
+        <constraints>
+          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="C"/>
+        </properties>
+      </component>
+      <component id="dcd78" class="javax.swing.JButton" binding="button4" default-binding="true">
+        <constraints>
+          <grid row="2" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="-"/>
         </properties>
       </component>
     </children>
