@@ -25,6 +25,7 @@ public class calculadora {
     private JButton button5;
     private JLabel salida;
     private JLabel salidaResultado;
+    private JButton button4;
 
     private String valor, x, y;
     private int num;
@@ -273,6 +274,17 @@ public class calculadora {
                     salida.setText(valor.substring(0,tamanio));
                 }else{
                     salida.setText("0");
+                }
+            }
+        });
+        cButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                valor = salida.getText();
+                if(!valor.equals("0")){
+                    salidaResultado.setText("Resultado saldrá aqui");
+                }else{
+                    salidaResultado.setText("Resultado saldrá aqui");
                 }
             }
         });
