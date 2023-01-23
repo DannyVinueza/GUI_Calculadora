@@ -278,11 +278,13 @@ public class calculadora {
         });
         cButton.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e) {
+            public void actionPerformed(ActionEvent e) {//Boton borrar
                 valor = salida.getText();
                 if(!valor.equals("0")){
+                    salida.setText("0");
                     salidaResultado.setText("Resultado saldrá aqui");
                 }else{
+                    salida.setText("0");
                     salidaResultado.setText("Resultado saldrá aqui");
                 }
             }
