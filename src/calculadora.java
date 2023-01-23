@@ -37,9 +37,6 @@ public class calculadora {
             @Override
             public void actionPerformed(ActionEvent e) {
                  valor = salida.getText();
-                //num = Integer.parseInt(a0Button.getText());
-                /*salida.setText("");
-                salida.setText(salida.getText()+"0");*/
                 if (valor.length()==1 && valor.equals("0")){
                     salida.setText("0");
                 }else{
@@ -51,9 +48,6 @@ public class calculadora {
             @Override
             public void actionPerformed(ActionEvent e) {
                 valor = salida.getText();
-                /*num = Integer.parseInt(a0Button.getText());
-                salida.setText("");
-                salida.setText(salida.getText()+"1");*/
                 if (valor.equals("0")){
                     salida.setText("1");
                 }else{
@@ -65,9 +59,6 @@ public class calculadora {
             @Override
             public void actionPerformed(ActionEvent e) {
                 valor = salida.getText();
-                /*num = Integer.parseInt(a2Button.getText());
-                salida.setText("");
-                salida.setText(salida.getText()+"2");*/
                 if(valor.equals("0")){
                     salida.setText("2");
                 }else{
@@ -78,9 +69,6 @@ public class calculadora {
         a3Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                /*num = Integer.parseInt(a3Button.getText());
-                salida.setText("");
-                salida.setText(salida.getText()+"3");*/
                 valor = salida.getText();
                 if(valor.equals("0")){
                     salida.setText("3");
@@ -92,9 +80,6 @@ public class calculadora {
         a4Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                /*num = Integer.parseInt(a4Button.getText());
-                salida.setText("");
-                salida.setText(salida.getText()+"4");*/
                 valor = salida.getText();
                 if(valor.equals("0")){
                     salida.setText("4");
@@ -106,9 +91,6 @@ public class calculadora {
         a5Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                /*num = Integer.parseInt(a5Button.getText());
-                salida.setText("");
-                salida.setText(salida.getText()+"5");*/
                 valor = salida.getText();
                 if(valor.equals("0")){
                     salida.setText("5");
@@ -120,9 +102,6 @@ public class calculadora {
         a6Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-               /* num = Integer.parseInt(a6Button.getText());
-                salida.setText("");
-                salida.setText(salida.getText()+"6");*/
                 valor = salida.getText();
                 if(valor.equals("0")){
                     salida.setText("6");
@@ -134,9 +113,6 @@ public class calculadora {
         a7Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                /*num = Integer.parseInt(a7Button.getText());
-                salida.setText("");
-                salida.setText(salida.getText()+"7");*/
                 valor = salida.getText();
                 if(valor.equals("0")){
                     salida.setText("7");
@@ -148,9 +124,6 @@ public class calculadora {
         a8Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                /*num = Integer.parseInt(a8Button.getText());
-                salida.setText("");
-                salida.setText(salida.getText()+"8");*/
                 valor = salida.getText();
                 if(valor.equals("0")){
                     salida.setText("8");
@@ -162,9 +135,6 @@ public class calculadora {
         a9Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                /*num = Integer.parseInt(a9Button.getText());
-                salida.setText("");
-                salida.setText(salida.getText()+"9");*/
                 valor = salida.getText();
                 if(valor.equals("0")){
                     salida.setText("9");
@@ -176,8 +146,6 @@ public class calculadora {
         button3.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-               /* num = Integer.parseInt(button3.getText());
-                salida.setText(salida.getText()+", ");*/
                 valor = salida.getText();
                 if (!valor.contains(".")){
                     salida.setText(valor + ".");
@@ -187,66 +155,58 @@ public class calculadora {
         button2.addActionListener(new ActionListener() {//Boton igual
             @Override
             public void actionPerformed(ActionEvent e) {
-                /*num = Integer.parseInt(button2.getText());
-                salida.setText(salida.getText()+" = ");*/
-                /*y = salida.getText();
+                y = salida.getText();
                 if(calcular == 1){
                     float num1 = Float.parseFloat(x);
                     float num2 = Float.parseFloat(y);
                     float resultado = (num1 + num2);
+                    salida.setText(String.valueOf(resultado));
                     salidaResultado.setText(String.valueOf(resultado));
-                }*/
-
-                valor = salida.getText();
-                char operador = '+';
-                double resultadoTotal = 0;
-                for(int i = 0; i < valor.length(); i++){
-                    char c = valor.charAt(i);
-                    if (Character.isDigit(c)){
-                        double numGeneral = Character.getNumericValue(c);
-                        if(operador == '+'){
-                            resultadoTotal = resultadoTotal + numGeneral;
-                        }else if(operador == '-'){
-                            resultadoTotal = resultadoTotal - numGeneral;
-                        }else if(operador == '*'){
-                            resultadoTotal = resultadoTotal * numGeneral;
-                        }else if(operador == '/'){
-                            resultadoTotal = resultadoTotal / numGeneral;
-                        }
-                    }else if(c == '+' || c == '-' || c == '*' || c == '/'){
-                        operador = c;
-                    }
                 }
-                salidaResultado.setText(String.valueOf(resultadoTotal));
+                if(calcular == 2){
+                    float num1 = Float.parseFloat(x);
+                    float num2 = Float.parseFloat(y);
+                    float resultado = (num1 - num2);
+                    salida.setText(String.valueOf(resultado));
+                    salidaResultado.setText(String.valueOf(resultado));
+                }
+                if(calcular == 3){
+                    float num1 = Float.parseFloat(x);
+                    float num2 = Float.parseFloat(y);
+                    float resultado = (num1 * num2);
+                    salida.setText(String.valueOf(resultado));
+                    salidaResultado.setText(String.valueOf(resultado));
+                }
+                if(calcular == 4){
+                    float num1 = Float.parseFloat(x);
+                    float num2 = Float.parseFloat(y);
+                    float resultado = (num1 / num2);
+                    salida.setText(String.valueOf(resultado));
+                    salidaResultado.setText(String.valueOf(resultado));
+                }
             }
         });
         xButton.addActionListener(new ActionListener() {//Boton de multiplicacion
             @Override
             public void actionPerformed(ActionEvent e) {
-                /*num = Integer.parseInt(xButton.getText());
-                salida.setText(salida.getText()+" x ");*/
                 x = salida.getText();
-                salida.setText(x + "*");
-                calcular = 2;
+                salida.setText("0");
+                calcular = 3;
             }
         });
         xButton1.addActionListener(new ActionListener() {//Boton division
             @Override
             public void actionPerformed(ActionEvent e) {
-                /*num = Integer.parseInt(xButton1.getText());
-                salida.setText(salida.getText()+" ÷ ");*/
                 x = salida.getText();
-                salida.setText(x + "/");
+                salida.setText("0");
                 calcular = 4;
             }
         });
         button10.addActionListener(new ActionListener() {//Boton suma
             @Override
             public void actionPerformed(ActionEvent e) {
-                /*num = Integer.parseInt(xButton1.getText());
-                salida.setText(salida.getText()+" + ");*/
                 x = salida.getText();
-                salida.setText(x + "+");
+                salida.setText("0");
                 calcular = 1;
 
             }
@@ -290,6 +250,17 @@ public class calculadora {
                 }
             }
         });
+        button4.addActionListener(new ActionListener() {//Boton resta
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                /*num = Integer.parseInt(xButton1.getText());
+                salida.setText(salida.getText()+" + ");*/
+                    x = salida.getText();
+                    salida.setText("0");
+                    calcular = 2;
+
+            }
+        });
     }
     public static void main(String[] args) {
         JFrame frame =new JFrame("calculadora");
@@ -300,4 +271,5 @@ public class calculadora {
         frame.pack();
         frame.setVisible(true);
     }
+
 }
