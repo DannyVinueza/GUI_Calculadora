@@ -339,6 +339,7 @@ public class calculadora {
                 if (valor2 == 0){
                     salidaResultado.setText("No se puede divir entre 0");
                     break;
+
                 } else {
                     resultado = valor1 / valor2;
                     salidaResultado.setText(resultado + "");
