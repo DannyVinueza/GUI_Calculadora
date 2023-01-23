@@ -356,5 +356,6 @@ public class calculadora {
         frame.setSize(1000,1000);
         frame.pack();
         frame.setVisible(true);
+
     }
 }
