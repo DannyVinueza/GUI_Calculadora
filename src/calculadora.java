@@ -5,16 +5,16 @@ import java.text.DecimalFormat;
 
 public class calculadora {
     private JPanel panelPrincipal;
-    private JButton button1;
-    private JButton button2;
-    private JButton button3;
+    private JButton menosButton;
+    private JButton igualButton;
+    private JButton decimalButton;
     private JButton a0Button;
     private JButton a9Button;
     private JButton a8Button;
     private JButton a7Button;
-    private JButton xButton1;
-    private JButton xButton;
-    private JButton button10;
+    private JButton divisionButton;
+    private JButton multipButton;
+    private JButton masButton;
     private JButton a6Button;
     private JButton a5Button;
     private JButton a3Button;
@@ -22,279 +22,339 @@ public class calculadora {
     private JButton a1Button;
     private JButton a4Button;
     private JButton cButton;
-    private JButton button5;
+    private JButton borrarButton;
     private JLabel salida;
     private JLabel salidaResultado;
-    private JButton button4;
+    private boolean inicio = true, igual = true, operacion1, operacion2;
 
-    private String valor, x, y;
-    private int num;
-    private int calcular;//Variable que guardara que operacion va  a hacer la calculadora
+    private double valor1, valor2, resultado;
+    private String tipoOperaciones;
     static DecimalFormat dc = new DecimalFormat("##.00");
 
     public calculadora(){
         a0Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                 valor = salida.getText();
-                //num = Integer.parseInt(a0Button.getText());
-                /*salida.setText("");
-                salida.setText(salida.getText()+"0");*/
-                if (valor.length()==1 && valor.equals("0")){
-                    salida.setText("0");
-                }else{
-                    salida.setText(valor + "0");
+
+                if(inicio == true) {
+                    salidaResultado.setText("");
+                    salidaResultado.setText("0");
+                    inicio = false;
+                } else {
+                    salidaResultado.setText(salidaResultado.getText()+"0");
                 }
             }
         });
         a1Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                valor = salida.getText();
-                /*num = Integer.parseInt(a0Button.getText());
-                salida.setText("");
-                salida.setText(salida.getText()+"1");*/
-                if (valor.equals("0")){
-                    salida.setText("1");
-                }else{
-                    salida.setText(valor + "1");
+                if(inicio == true) {
+                    salidaResultado.setText("");
+                    salidaResultado.setText("1");
+                    inicio = false;
+                } else {
+                    salidaResultado.setText(salidaResultado.getText()+"1");
                 }
             }
         });
         a2Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                valor = salida.getText();
-                /*num = Integer.parseInt(a2Button.getText());
-                salida.setText("");
-                salida.setText(salida.getText()+"2");*/
-                if(valor.equals("0")){
-                    salida.setText("2");
-                }else{
-                    salida.setText(valor + "2");
+                if (inicio == true) {
+                    salidaResultado.setText("");
+                    salidaResultado.setText("2");
+                    inicio = false;
+                } else {
+                    salidaResultado.setText(salidaResultado.getText() + "2");
                 }
             }
         });
         a3Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                /*num = Integer.parseInt(a3Button.getText());
-                salida.setText("");
-                salida.setText(salida.getText()+"3");*/
-                valor = salida.getText();
-                if(valor.equals("0")){
-                    salida.setText("3");
-                }else{
-                    salida.setText(valor + "3");
+                if(inicio == true) {
+                    salidaResultado.setText("");
+                    salidaResultado.setText("3");
+                    inicio = false;
+                } else {
+                    salidaResultado.setText(salidaResultado.getText()+"3");
                 }
             }
         });
         a4Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                /*num = Integer.parseInt(a4Button.getText());
-                salida.setText("");
-                salida.setText(salida.getText()+"4");*/
-                valor = salida.getText();
-                if(valor.equals("0")){
-                    salida.setText("4");
-                }else{
-                    salida.setText(valor + "4");
+                if(inicio == true) {
+                    salidaResultado.setText("");
+                    salidaResultado.setText("4");
+                    inicio = false;
+                } else {
+                    salidaResultado.setText(salidaResultado.getText()+"4");
                 }
             }
         });
         a5Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                /*num = Integer.parseInt(a5Button.getText());
-                salida.setText("");
-                salida.setText(salida.getText()+"5");*/
-                valor = salida.getText();
-                if(valor.equals("0")){
-                    salida.setText("5");
-                }else{
-                    salida.setText(valor + "5");
+                if(inicio == true) {
+                    salidaResultado.setText("");
+                    salidaResultado.setText("5");
+                    inicio = false;
+                } else {
+                    salidaResultado.setText(salidaResultado.getText()+"5");
                 }
             }
         });
         a6Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-               /* num = Integer.parseInt(a6Button.getText());
-                salida.setText("");
-                salida.setText(salida.getText()+"6");*/
-                valor = salida.getText();
-                if(valor.equals("0")){
-                    salida.setText("6");
-                }else{
-                    salida.setText(valor + "6");
+                if(inicio == true) {
+                    salidaResultado.setText("");
+                    salidaResultado.setText("6");
+                    inicio = false;
+                } else {
+                    salidaResultado.setText(salidaResultado.getText()+"6");
                 }
             }
         });
         a7Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                /*num = Integer.parseInt(a7Button.getText());
-                salida.setText("");
-                salida.setText(salida.getText()+"7");*/
-                valor = salida.getText();
-                if(valor.equals("0")){
-                    salida.setText("7");
-                }else{
-                    salida.setText(valor + "7");
+                if(inicio == true) {
+                    salidaResultado.setText("");
+                    salidaResultado.setText("7");
+                    inicio = false;
+                } else {
+                    salidaResultado.setText(salidaResultado.getText()+"7");
                 }
             }
         });
         a8Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                /*num = Integer.parseInt(a8Button.getText());
-                salida.setText("");
-                salida.setText(salida.getText()+"8");*/
-                valor = salida.getText();
-                if(valor.equals("0")){
-                    salida.setText("8");
-                }else{
-                    salida.setText(valor + "8");
+                if(inicio == true) {
+                    salidaResultado.setText("");
+                    salidaResultado.setText("8");
+                    inicio = false;
+                } else {
+                    salidaResultado.setText(salidaResultado.getText()+"8");
                 }
             }
         });
         a9Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                /*num = Integer.parseInt(a9Button.getText());
-                salida.setText("");
-                salida.setText(salida.getText()+"9");*/
-                valor = salida.getText();
-                if(valor.equals("0")){
-                    salida.setText("9");
-                }else{
-                    salida.setText(valor + "9");
+                if(inicio == true) {
+                    salidaResultado.setText("");
+                    salidaResultado.setText("9");
+                    inicio = false;
+                } else {
+                    salidaResultado.setText(salidaResultado.getText()+"9");
                 }
             }
         });
-        button3.addActionListener(new ActionListener() {
+        decimalButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-               /* num = Integer.parseInt(button3.getText());
-                salida.setText(salida.getText()+", ");*/
-                valor = salida.getText();
-                if (!valor.contains(".")){
-                    salida.setText(valor + ".");
-                }
-            }
-        });
-        button2.addActionListener(new ActionListener() {//Boton igual
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                /*num = Integer.parseInt(button2.getText());
-                salida.setText(salida.getText()+" = ");*/
-                /*y = salida.getText();
-                if(calcular == 1){
-                    float num1 = Float.parseFloat(x);
-                    float num2 = Float.parseFloat(y);
-                    float resultado = (num1 + num2);
-                    salidaResultado.setText(String.valueOf(resultado));
-                }*/
+                if(salidaResultado.getText().contains(".")){
 
-                valor = salida.getText();
-                char operador = '+';
-                double resultadoTotal = 0;
-                for(int i = 0; i < valor.length(); i++){
-                    char c = valor.charAt(i);
-                    if (Character.isDigit(c)){
-                        double numGeneral = Character.getNumericValue(c);
-                        if(operador == '+'){
-                            resultadoTotal = resultadoTotal + numGeneral;
-                        }else if(operador == '-'){
-                            resultadoTotal = resultadoTotal - numGeneral;
-                        }else if(operador == '*'){
-                            resultadoTotal = resultadoTotal * numGeneral;
-                        }else if(operador == '/'){
-                            resultadoTotal = resultadoTotal / numGeneral;
-                        }
-                    }else if(c == '+' || c == '-' || c == '*' || c == '/'){
-                        operador = c;
+                }else{
+                    salidaResultado.setText(salidaResultado.getText()+".");
+                    inicio = false;
+                }
+            }
+        });
+        igualButton.addActionListener(new ActionListener() {//Boton igual
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                inicio = true;
+                operacion1 = true;
+                if (igual = true) {
+                    if (tipoOperaciones == null) {
+
+                    }else{
+                        valor2 = Double.parseDouble(salidaResultado.getText());
+                        salida.setText(salida.getText()+salidaResultado.getText());
+                        Operaciones(valor1,valor2);
+                        igual = false;
+                    }
+                } else {
+                    salida.setText("");
+                    Operaciones(valor1,valor2);
+                }
+            }
+        });
+        multipButton.addActionListener(new ActionListener() {//Boton de multiplicacion
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                igual = true;
+                inicio = true;
+                // condicion para la variable operacion1
+                if (operacion1 = true) {
+                    valor1 = Double.parseDouble(salidaResultado.getText());
+                    salida.setText("");
+                    salida.setText(salidaResultado.getText()+" x ");
+                    operacion1 = false;
+                }else {
+                    // condicion para la variable operacion2
+                    if (operacion2 = true) {
+                        valor2 = Double.parseDouble(salidaResultado.getText());
+                        salida.setText("");
+                        salida.setText(salidaResultado.getText()+" x ");
+                        operacion2 = false;
+                    }else {
+                        salida.setText(salidaResultado.getText()+" x ");
+                        Operaciones(resultado, valor2);
                     }
                 }
-                salidaResultado.setText(String.valueOf(resultadoTotal));
+                tipoOperaciones = "*";
             }
         });
-        xButton.addActionListener(new ActionListener() {//Boton de multiplicacion
+        divisionButton.addActionListener(new ActionListener() {//Boton division
             @Override
             public void actionPerformed(ActionEvent e) {
-                /*num = Integer.parseInt(xButton.getText());
-                salida.setText(salida.getText()+" x ");*/
-                x = salida.getText();
-                salida.setText(x + "*");
-                calcular = 2;
-            }
-        });
-        xButton1.addActionListener(new ActionListener() {//Boton division
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                /*num = Integer.parseInt(xButton1.getText());
-                salida.setText(salida.getText()+" ÷ ");*/
-                x = salida.getText();
-                salida.setText(x + "/");
-                calcular = 4;
-            }
-        });
-        button10.addActionListener(new ActionListener() {//Boton suma
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                /*num = Integer.parseInt(xButton1.getText());
-                salida.setText(salida.getText()+" + ");*/
-                x = salida.getText();
-                salida.setText(x + "+");
-                calcular = 1;
-
-            }
-        });
-        button1.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                valor = salida.getText();
-                int longitud = valor.length();
-                int tamanio = longitud;
-                if(valor.contains("-")){
-                    salida.setText(valor.substring(1,tamanio));
-                }else{
-                    salida.setText("-"+valor);
+                igual = true;
+                inicio = true;
+                // condicion para la variable operacion1
+                if (operacion1 = true) {
+                    valor1 = Double.parseDouble(salidaResultado.getText());
+                    salida.setText("");
+                    salida.setText(salidaResultado.getText()+" / ");
+                    operacion1 = false;
+                }else {
+                    // condicion para la variable operacion2
+                    if (operacion2 = true) {
+                        valor2 = Double.parseDouble(salidaResultado.getText());
+                        salida.setText("");
+                        salida.setText(salidaResultado.getText()+" / ");
+                        operacion2 = false;
+                    }else {
+                        salida.setText(salidaResultado.getText()+" / ");
+                        Operaciones(resultado, valor2);
+                    }
                 }
+                tipoOperaciones = "/";
             }
         });
-        button5.addActionListener(new ActionListener() {
+        masButton.addActionListener(new ActionListener() {//Boton suma
             @Override
             public void actionPerformed(ActionEvent e) {
-                valor = salida.getText();
-                int longitud = valor.length();
-                int tamanio = longitud - 1;
-                if (tamanio >= 1){
-                    salida.setText(valor.substring(0,tamanio));
-                }else{
-                    salida.setText("0");
+                igual = true;
+                inicio = true;
+                // condicion para la variable operacion1
+                if (operacion1 = true) {
+                    valor1 = Double.parseDouble(salidaResultado.getText());
+                    salida.setText("");
+                    salida.setText(salidaResultado.getText()+" + ");
+                    operacion1 = false;
+                }else {
+                    // condicion para la variable operacion2
+                    if (operacion2 = true) {
+                        valor2 = Double.parseDouble(salidaResultado.getText());
+                        salida.setText("");
+                        salida.setText(salidaResultado.getText()+" + ");
+                        operacion2 = false;
+                    }else {
+                        salida.setText(salidaResultado.getText()+" + ");
+                        Operaciones(resultado, valor2);
+                    }
+                }
+                tipoOperaciones = "+";
+            }
+        });
+        menosButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                igual = true;
+                inicio = true;
+                // condicion para la variable operacion1
+                if (operacion1 = true) {
+                    valor1 = Double.parseDouble(salidaResultado.getText());
+                    salida.setText("");
+                    salida.setText(salidaResultado.getText()+" - ");
+                    operacion1 = false;
+                }else {
+                    // condicion para la variable operacion2
+                    if (operacion2 = true) {
+                        valor2 = Double.parseDouble(salidaResultado.getText());
+                        salida.setText("");
+                        salida.setText(salidaResultado.getText()+" - ");
+                        operacion2 = false;
+                    }else {
+                        salida.setText(salidaResultado.getText()+" - ");
+                        Operaciones(resultado, valor2);
+                    }
+                }
+                tipoOperaciones = "-";
+            }
+        });
+        borrarButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (salidaResultado.getText().length() > 0) {
+                    salidaResultado.setText(salidaResultado.getText().substring(0,salidaResultado.getText().length()-1));
+                    if (salidaResultado.getText().length() == 0){
+                        salidaResultado.setText("0");
+                        inicio = true;
+                    }
                 }
             }
         });
         cButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                valor = salida.getText();
-                if(!valor.equals("0")){
-                    salidaResultado.setText("Resultado saldrá aqui");
-                }else{
-                    salidaResultado.setText("Resultado saldrá aqui");
-                }
+                salidaResultado.setText("0");
+                salida.setText("");
+                inicio = true;
+                operacion1 = true;
+                operacion2 = true;
+                igual = true;
+                valor1 = 0;
+                valor2 = 0;
+                resultado = 0;
             }
         });
+    }
+
+    private void Operaciones(double valor1, double valor2){
+        switch (tipoOperaciones){
+            // Case con las funciones de sumar
+            case "+":
+                resultado = valor1 + valor2;
+                salidaResultado.setText(resultado+"");
+                valor1 = Double.parseDouble(salidaResultado.getText());
+                break;
+            // Case con las funciones de restar
+            case "-":
+                resultado = valor1 - valor2;
+                salidaResultado.setText(resultado+"");
+                valor1 = Double.parseDouble(salidaResultado.getText());
+                break;
+            // Case con las funciones de multiplicar
+            case "*":
+                resultado = valor1 * valor2;
+                salidaResultado.setText(resultado+"");
+                valor1 = Double.parseDouble(salidaResultado.getText());
+                break;
+            // Case con las funciones de dividir
+            case "/":
+                if (valor2 == 0){
+                    salidaResultado.setText("Error ");
+                    break;
+                } else {
+                    resultado = valor1 / valor2;
+                    salidaResultado.setText(resultado + "");
+                    valor1 = Double.parseDouble(salidaResultado.getText());
+                    break;
+                }
+        }
     }
     public static void main(String[] args) {
         JFrame frame =new JFrame("calculadora");
 
         frame.setContentPane(new calculadora().panelPrincipal);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(370,300);
+        frame.setSize(500,1000);
         frame.pack();
         frame.setVisible(true);
     }
