@@ -3,7 +3,7 @@
   <grid id="27dc6" binding="panelPrincipal" layout-manager="GridLayoutManager" row-count="7" column-count="4" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
-      <xy x="20" y="20" width="500" height="400"/>
+      <xy x="20" y="20" width="501" height="416"/>
     </constraints>
     <properties>
       <background color="-30833"/>
@@ -69,7 +69,7 @@
           <text value="7"/>
         </properties>
       </component>
-      <component id="5ebe9" class="javax.swing.JButton" binding="xButton1" default-binding="true">
+      <component id="5ebe9" class="javax.swing.JButton" binding="xButton1">
         <constraints>
           <grid row="3" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -165,10 +165,10 @@
           <font name="Cambria Math" size="20"/>
           <foreground color="-16777216"/>
           <horizontalTextPosition value="4"/>
-          <text value="Empieza a calcular"/>
+          <text value="0"/>
         </properties>
       </component>
-      <component id="a669f" class="javax.swing.JLabel">
+      <component id="a669f" class="javax.swing.JLabel" binding="salidaResultado">
         <constraints>
           <grid row="1" column="0" row-span="1" col-span="4" vsize-policy="0" hsize-policy="7" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
